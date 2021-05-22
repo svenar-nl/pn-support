@@ -7,7 +7,7 @@ module.exports = class uqrCommand extends Command {
       aliases: ['use-quick-response', 'uqr'],
       description: {
         content: 'Use a quick response',
-        usage: '<name/alias> [member]',
+        usage: '<name/alias> [<userID>]',
         note: `Quick responses can also be used like this: \`\`\`${config.quickResponsePrefix}<name/alias>\`\`\``
       },
       args: [
