@@ -12,7 +12,7 @@ module.exports = class info extends Command {
         examples: ['add countr https://countr-stats.but-it-actually.works/']
       }
     });
-  }
+  };
 
   *args() {
     let addOrRemove = yield {
@@ -29,7 +29,7 @@ module.exports = class info extends Command {
     if(!addOrRemove || addOrRemove === 'list') {
       addOrRemove = 'list';
       return { addOrRemove };
-    }
+    };
     const name = yield {
       type: async (msg, str) => {
         if (!str) return null;
@@ -51,7 +51,7 @@ module.exports = class info extends Command {
     };
     if(addOrRemove === 'add') var dns = yield { prompt: { start: 'Enter an ip' } };
     return { addOrRemove, name, dns };
-  }
+  };
 
   async exec(msg, { addOrRemove, name, dns }) {
     let dnss = await this.client.db.get(msg.guild.id, 'dns', []);
@@ -68,6 +68,6 @@ module.exports = class info extends Command {
       dnss = dnss.concat({ name, dns });
       await this.client.db.set(msg.guild.id, 'dns', dnss);
       return msg.reply(`Added \`${name}\`.`);
-    }
-  }
+    };
+  };
 };

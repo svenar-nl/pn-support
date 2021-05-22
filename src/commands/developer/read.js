@@ -19,7 +19,7 @@ class readCommand extends Command {
         }
       ]
     });
-  }
+  };
 
   async exec(msg, { path }) {
     fs.readFile(path, 'utf8', async (err, data) => {
@@ -27,8 +27,7 @@ class readCommand extends Command {
       const haste = await this.client.functions.haste(data);
       msg.channel.send(haste);
     });
-  }
-}
-
+  };
+};
 
 module.exports = readCommand;

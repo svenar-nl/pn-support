@@ -5,7 +5,7 @@ class messageListener extends Listener {
       emitter: 'client',
       event: 'message'
     });
-  }
+  };
 
   async exec(msg) {
     if (msg.author.bot) return;
@@ -20,10 +20,10 @@ class messageListener extends Listener {
       const invite = await msg.client.fetchInvite(msg.content).catch(() => false);
       if (!invite) return msg.react('❌');
       return await this.handleInv(tickets[0], msg, invite);
-    }
+    };
 
     return;
-  }
+  };
 
   async handleInv(ticket, msg, invite) {
     const chnl = this.client.channels.cache.get(ticket.channel);
@@ -34,7 +34,7 @@ class messageListener extends Listener {
     ticket.invMsg = invMsg.id;
     await this.client.functions.ticket.edit(this.client, msg.author.id, oldTicket, ticket);
     return msg.react('✅');
-  }
-}
+  };
+};
 
 module.exports = messageListener;

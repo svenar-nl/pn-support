@@ -5,11 +5,11 @@ class UnhandledRejectionListener extends Listener {
             event: 'UnhandledPromiseRejectionWarning',
             emitter: 'process',
         });
-    }
+    };
 
     exec(error) {
         console.warn(new Date().toUTCString(), error, error.stack)
-    }
-}
+    };
+};
 
 module.exports = UnhandledRejectionListener;

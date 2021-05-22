@@ -40,7 +40,7 @@ module.exports = {
   async addReactions(msg, ...emojis) {
     for (const emoji of emojis) {
       await msg.react(emoji);
-    }
+    };
     return msg;
   },
 
@@ -48,7 +48,7 @@ module.exports = {
     var index = arr.indexOf(value);
     if (index > -1) {
       arr.splice(index, 1);
-    }
+    };
     return arr;
   },
   async haste(str) {
@@ -61,7 +61,7 @@ module.exports = {
         .catch(e => {
           if (e) i++;
         });
-    }
+    };
     // https://haste.red-panda.red/ puts a double // at the end for some reasons
     return haste ? haste.replace(/red\/\//, 'red/') : 'Try Again Later';
   },

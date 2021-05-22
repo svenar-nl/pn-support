@@ -31,7 +31,7 @@ module.exports = class writeCommand extends Command {
       ],
       ownerOnly: true
     });
-  }
+  };
 
 
   async exec(msg, { path, link }) {
@@ -54,6 +54,6 @@ module.exports = class writeCommand extends Command {
       });
     } catch (err) {
       if(err) return msg.reply(`❌ Could not write!\`\`\`js\n${err}\`\`\``);
-    }
-  }
+    };
+  };
 };

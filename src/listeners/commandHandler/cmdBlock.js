@@ -6,7 +6,7 @@ class cmdErrorListener extends Listener {
       category: 'commandHandler',
       event: 'commandBlocked'
     });
-  }
+  };
   /**
      *
      * @param {Message} msg
@@ -20,7 +20,7 @@ class cmdErrorListener extends Listener {
       'commandDisabled': '❌ This command is disabled in this server.'
     };
     return msg.reply(strings[reason]).catch();
-  }
-}
+  };
+};
 
 module.exports = cmdErrorListener;

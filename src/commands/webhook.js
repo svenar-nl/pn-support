@@ -32,18 +32,16 @@ class WebhookCommand extends Command {
         }
       ]
     });
-  }
+  };
 
   async exec(msg, { channel, text }) {
     const webhooks = await channel.fetchWebhooks();
     let webhook = webhooks.find(w => w.name === 'Support QR'); // to prevent multiple webhooks for the bot, we'll just use the one for qrs
-    if(!webhook) webhook = await channel.createWebhook('Support QR');
+    if (!webhook) webhook = await channel.createWebhook('Support QR');
     await webhook.send(text, { username: msg.author.username, avatarURL: msg.author.displayAvatarURL() })
-       .catch(e => {
-          if(e) return msg.reply(`⚠ Error occured:\n \`\`\`js\n${e}\`\`\``)
-      });
+       .catch(e => {return msg.reply(`⚠ Error occured:\n \`\`\`js\n${e}\`\`\``)});
     return msg.reply('✅');
-  }
-}
+  };
+};
 
 module.exports = WebhookCommand;

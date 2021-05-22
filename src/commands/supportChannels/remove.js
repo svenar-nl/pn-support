@@ -25,7 +25,7 @@ module.exports = class rscCommand extends Command {
         }
       ]
     });
-  }
+  };
 
   async exec(msg, { sc }) {
     let scs = await this.client.db.get(msg.guild.id, 'sc', []);
@@ -53,5 +53,5 @@ module.exports = class rscCommand extends Command {
       if(collected.size == 0) msg.reply('❌ Command Cancelled');
       return m.reactions.removeAll().catch();
     });
-  }
+  };
 };

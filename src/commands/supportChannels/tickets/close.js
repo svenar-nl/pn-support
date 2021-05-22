@@ -30,7 +30,7 @@ module.exports = class closeTicketCommand extends Command {
         }
       ]
     });
-  }
+  };
 
   async exec(msg, { reason }) {
     await msg.channel.lockPermissions();
@@ -67,11 +67,11 @@ module.exports = class closeTicketCommand extends Command {
       const m = await sc.messages.fetch(ticket.cMsg);
       const str = m.content.replace('**Status:** Open', `**Status:** Closed by ${msg.author.tag} | **Reason:** ${reason}`);
       m.edit(str);
-    }
+    };
     return await msg.channel.delete(reason).catch();
-  }
+  };
 };
 
 function notTicketChannel(msg) {
   return msg.reply('❌ This command can only be used in a ticket channel');
-}
+};

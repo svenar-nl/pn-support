@@ -37,7 +37,7 @@ module.exports = class createTicketCommand extends Command {
         }
       ]
     });
-  }
+  };
 
   async exec(msg, { member, reason }) {
     const typeResolver = this.handler.resolver.type('sc');
@@ -51,7 +51,7 @@ module.exports = class createTicketCommand extends Command {
     if (ticket) {
       const chnl = msg.client.channels.cache.get(ticket.channel);
       return msg.reply(`❌ A ticket is already open for ${member.user.tag} (${chnl})`);
-    }
+    };
     const
       m = await msg.reply('⏳ Making a ticket, please wait.'),
       cName = `${member.user.username.slice(0, 4)}-${member.user.discriminator}`,
@@ -102,5 +102,5 @@ module.exports = class createTicketCommand extends Command {
 
     await this.client.functions.ticket.open(this.client, member.id, newTicket);
     return m.edit(`${msg.author}, ✅ Ticket created for ${member.user.tag}. | **Status:** Open`);
-  }
+  };
 };

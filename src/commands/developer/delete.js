@@ -19,7 +19,7 @@ class deleteCommand extends Command {
         }
       ]
     });
-  }
+  };
 
 
   async exec(msg, { path }) {
@@ -32,8 +32,7 @@ class deleteCommand extends Command {
         return msg.reply('✅ File deleted successfulyl!');
       });
     });
-  }
-}
-
+  };
+};
 
 module.exports = deleteCommand;

@@ -32,7 +32,7 @@ class eqrCommand extends Command {
         }
       ]
     });
-  }
+  };
 
   async exec(msg, { qr, newResponse }) {
     const embed = msg.client.util.embed()
@@ -50,8 +50,8 @@ class eqrCommand extends Command {
     qrs = qrs.concat(qr);
     await this.client.db.set(msg.guild.id, 'qr', qrs);
     return msg.reply('✅ Quick-response edited!', embed);
-  }
-}
+  };
+};
 
 
 module.exports = eqrCommand;

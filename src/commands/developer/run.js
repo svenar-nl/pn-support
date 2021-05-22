@@ -24,7 +24,7 @@ module.exports = class runCommand extends Command {
       ],
       ownerOnly: true
     });
-  }
+  };
 
 
   async exec(msg, { command }) {
@@ -63,9 +63,9 @@ module.exports = class runCommand extends Command {
       }
       return await e.edit(pattern(res));
     });
-  }
+  };
 };
 
 function pattern(str) {
   return `\`\`\`css\n${str}\`\`\``;
-}
+};

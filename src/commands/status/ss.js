@@ -10,7 +10,7 @@ module.exports = class info extends Command {
         content: 'Provides status of all shards'
       }
     });
-  }
+  };
 
   async exec(msg) {
     let dnss = await this.client.db.get(msg.guild.id, 'dns', []);
@@ -43,8 +43,8 @@ module.exports = class info extends Command {
         arr.push(b);
       } else {
         arr.push(`__**${obj.name.toUpperCase()}**__\n${data}`);
-      }
-    }
+      };
+    };
     return m.edit(arr.join('\n'));
-  }
+  };
 };

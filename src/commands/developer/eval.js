@@ -30,7 +30,7 @@ module.exports = class evalCommand extends Command {
       ],
       ownerOnly: true
     });
-  }
+  };
   async exec(msg, { code: toEval }) {
     const code = toEval;
     const evaled = await eval(code);
@@ -72,15 +72,14 @@ module.exports = class evalCommand extends Command {
 				${inspected}
 				\`\`\`
 			`, { maxLength: 1900, prepend, append });
-      }
-      else {
+      } else {
         return discord.splitMessage(tags.stripIndents`
 				*Callback executed after ${hrDiffs[0] > 0 ? `${hrDiffs[0]}s ` : ''}${hrDiffs[1] / 1000000}ms.*
 				\`\`\`javascript
 				${inspected}
 				\`\`\`
 			`, { maxLength: 1900, prepend, append });
-      }
-    }
-  }
+      };
+    };
+  };
 };

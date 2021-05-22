@@ -15,7 +15,7 @@ module.exports = class ascCommand extends Command {
         ]
       }
     });
-  }
+  };
 
   *args() {
     const sc = yield {
@@ -50,7 +50,7 @@ module.exports = class ascCommand extends Command {
       }
     };
     return { sc, tc, lc };
-  }
+  };
 
   async exec(msg, { sc, tc, lc }) {
     let scs = await this.client.db.get(msg.guild.id, 'sc', []);
@@ -67,5 +67,5 @@ module.exports = class ascCommand extends Command {
       .setAuthor(msg.author.tag, msg.author.displayAvatarURL())
       .setDescription(`**Support Channel:** ${sc}\n**Ticket Category:** ${tc}\n**Logs Channel:** ${lc}`);
     return msg.reply('✅ Support Channel added!', embed);
-  }
+  };
 };

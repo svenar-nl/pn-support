@@ -7,13 +7,13 @@ class CooldownListener extends Listener {
       emitter: 'commandHandler',
       category: 'commandHandler'
     });
-  }
+  };
 
   exec(message, command, remaining) {
     const time = remaining / 1000;
 
     message.reply(`You can use that command again in ${time} seconds.`).catch();
-  }
-}
+  };
+};
 
 module.exports = CooldownListener;

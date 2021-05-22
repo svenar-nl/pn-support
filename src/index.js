@@ -81,8 +81,8 @@ class BotClient extends AkairoClient {
             await m.client.functions.ticket.close(m.client, str, t, closeData);
           } else {
             openTickets.push(t);
-          }
-        }
+          };
+        };
         if (m.guild && openTickets.length > 1) return openTickets.find(t => t.guild === m.guild.id);
         return openTickets;
       }
@@ -124,7 +124,7 @@ class BotClient extends AkairoClient {
     this.tickets = new MongooseProvider(ticketModel);
 
     this.functions = require('./functions');
-  }
+  };
 
   async login(token) {
     await connect(process.env.MONGO_URL, {
@@ -135,9 +135,9 @@ class BotClient extends AkairoClient {
     await this.db.init();
     console.info('Connected to the Database.');
     return super.login(token);
-  }
+  };
 
-}
+};
 
 const client = new BotClient();
 client

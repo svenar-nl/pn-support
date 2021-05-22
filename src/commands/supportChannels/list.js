@@ -11,7 +11,7 @@ module.exports = class listscCommand extends Command {
         content: 'Get a list of support channels'
       }
     });
-  }
+  };
 
   async exec(msg) {
     const scs = await this.client.db.get(msg.guild.id, 'sc', []);
@@ -24,5 +24,5 @@ module.exports = class listscCommand extends Command {
       embed.addField(`__*#${i + 1}*__`, `**Support Channel:** <#${sc.supportChannel}>\n**Ticket Category:** <#${sc.ticketCategory}>\n**Logs Channel:** <#${sc.logChannel}>`, true);
     });
     return msg.channel.send(embed);
-  }
+  };
 };

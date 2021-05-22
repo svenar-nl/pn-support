@@ -56,11 +56,11 @@ module.exports = class aqrCommand extends Command {
         }
       ]
     });
-  }
+  };
 
   async exec(msg, args) {
     const qrs = await this.client.db.get(msg.guild.id, 'qr', []);
     await this.client.db.set(msg.guild.id, 'qr', qrs.concat(args));
     return msg.reply('✅ Quick-response added.');
-  }
+  };
 };

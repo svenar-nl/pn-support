@@ -23,7 +23,7 @@ class HelpCommand extends Command {
         examples: ['', 'aqr', 'ping']
       }
     });
-  }
+  };
 
   async exec(message, { command, cancel }) {
     if (!command) return this.execCommandList(message);
@@ -47,18 +47,18 @@ class HelpCommand extends Command {
     for (const field of description.fields) embed.addField(field.name, field.value);
     if (description.note) {
       embed.addField('Note', description.note);
-    }
+    };
     if (description.examples.length) {
       const text = `${prefix}${command.aliases[0]}`;
       embed.addField('Examples', `\`${text} ${description.examples.length > 0 ? description.examples.join(`\`\n\`${text} `) : ''}\``, true);
-    }
+    };
 
     if (command.aliases.length > 1) {
       embed.addField('Aliases', `\`${command.aliases.join('` `')}\``);
-    }
+    };
 
     return message.channel.send(cancel ? `${message.author}, ⚠ Retry limit reached! Please try again.` : '', { embed });
-  }
+  };
 
   async execCommandList(message) {
     const prefix = message.util.parsed.prefix;
@@ -85,8 +85,8 @@ class HelpCommand extends Command {
     await message.channel.send({ embed });
 
     return undefined;
-  }
-}
+  };
+};
 
 function checkPermissions(msg, cmd) {
   if (
@@ -94,6 +94,6 @@ function checkPermissions(msg, cmd) {
     (cmd.ownerOnly ? msg.author.id === config.owner : true) &&
     (cmd.channel === 'guild' && !msg.member ? false : true)) return true;
   return false;
-}
+};
 
 module.exports = HelpCommand;

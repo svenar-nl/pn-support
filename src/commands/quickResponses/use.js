@@ -23,7 +23,7 @@ module.exports = class uqrCommand extends Command {
         }
       ]
     });
-  }
+  };
 
   async condition(msg, args) {
     if(args && args.qr) return args;
@@ -35,7 +35,7 @@ module.exports = class uqrCommand extends Command {
     let mmbr = null;
     if(args[1]) mmbr = msg.client.util.resolveMember(args[1], msg.guild.members.cache);
     return { qr, mmbr };
-  }
+  };
 
   async exec(msg, args) {
     args = await this.condition(msg, args);
@@ -45,5 +45,5 @@ module.exports = class uqrCommand extends Command {
     let webhook = webhooks.find(w => w.name === 'Support QR');
     if(!webhook) webhook = await msg.channel.createWebhook('Support QR');
     return webhook.send(`${args.mmbr ? args.mmbr.user : ''}\n${args.qr.text}`, { username: msg.author.username, avatarURL: msg.author.displayAvatarURL() });
-  }
+  };
 };

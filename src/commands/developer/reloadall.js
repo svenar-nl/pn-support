@@ -16,7 +16,7 @@ class ReloadCommand extends Command {
       },
       ownerOnly: true
     });
-  }
+  };
   *args() {
     const mtype = yield {
       type: [
@@ -33,7 +33,7 @@ class ReloadCommand extends Command {
       unordered: true
     };
     return { mtype };
-  }
+  };
   /**
      * @param {Message} message
      * @param {string} module
@@ -43,7 +43,7 @@ class ReloadCommand extends Command {
     if(mtype === 'inhibitor') this.client.inhibitorHandler.reloadAll();
     if(mtype === 'listener') this.client.listenerHandler.reloadAll();
     return message.util.reply(`Reloaded \`all\` ${mtype}s ✅`);
-  }
-}
+  };
+};
 
 module.exports = ReloadCommand;

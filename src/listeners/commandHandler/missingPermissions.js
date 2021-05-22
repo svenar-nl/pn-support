@@ -7,7 +7,7 @@ class MissingPermissionsListener extends Listener {
       emitter: 'commandHandler',
       category: 'commandHandler'
     });
-  }
+  };
 
   exec(message, _command, type, missing) {
     const text = {
@@ -24,8 +24,8 @@ class MissingPermissionsListener extends Listener {
     if (!text) return;
     if (message.guild ? message.channel.permissionsFor(this.client.user).has('SEND_MESSAGES') : true) {
       message.reply(text());
-    }
-  }
+    };
+  };
 
   missingPermissions(channel, user, permissions) {
     const missingPerms = channel.permissionsFor(user).missing(permissions)
@@ -39,7 +39,7 @@ class MissingPermissionsListener extends Listener {
     return missingPerms.length > 1
       ? `${missingPerms.slice(0, -1).join(', ')} and ${missingPerms.slice(-1)[0]}`
       : missingPerms[0];
-  }
-}
+  };
+};
 
 module.exports = MissingPermissionsListener;

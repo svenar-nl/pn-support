@@ -7,7 +7,7 @@ class cmdErrorListener extends Listener {
       category: 'commandHandler',
       event: 'error'
     });
-  }
+  };
   /**
      *
      * @param {Message} msg
@@ -18,7 +18,7 @@ class cmdErrorListener extends Listener {
     console.error(`Message: ${msg.content} ID: ${msg.id}\nUser: ${msg.member ? msg.member.user.tag : msg.author.tag} ID: ${msg.member ? msg.member.user.id : msg.author.id}\nChannel: ${msg.channel.name} ID: ${msg.channel.id}\nCommand: ${command ? command.id : 'N/A'}\nTime: ${time.toString()}`);
     console.error(error.stack);
     msg.reply(`❌ An error occured (\`cmdError\`):\`\`\`js\n${error}\`\`\``).catch();
-  }
-}
+  };
+};
 
 module.exports = cmdErrorListener;

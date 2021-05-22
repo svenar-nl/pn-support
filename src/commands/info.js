@@ -13,7 +13,7 @@ module.exports = class info extends Command {
         content: 'Provides info about the bot.'
       }
     });
-  }
+  };
 
 
   exec(msg) {
@@ -60,5 +60,5 @@ module.exports = class info extends Command {
         }
       ]);
     msg.channel.send(embed);
-  }
+  };
 };

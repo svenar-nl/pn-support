@@ -16,7 +16,7 @@ class eqraCommand extends Command {
         ]
       }
     });
-  }
+  };
 
   *args() {
     const qr = yield {
@@ -55,7 +55,7 @@ class eqraCommand extends Command {
       }
     };
     return { qr, addOrRemove, alias };
-  }
+  };
 
   async exec(msg, { qr, addOrRemove, alias }) {
     if (qr.aliases.length === 1 && addOrRemove === 'remove') return msg.reply('❌ Failed to remove alias. A quick response must have at least 1 alias.');
@@ -74,13 +74,13 @@ class eqraCommand extends Command {
     await this.client.db.set(msg.guild.id, 'quickResponse', qrs);
 
     msg.reply(`✅ Alias ${addOrRemove === 'add' ? 'added' : 'removed'} succesfully!`, embed);
-  }
-}
+  };
+};
 
 function makeStr(qr, alias, addOrRemove) {
   const str1 = qr.aliases.map(a => a === alias ? `~~**\`${a}\`**~~` : `\`${a}\``).join(', '),
     str2 = addOrRemove === 'add' ? `, __**\`${alias}\`**__` : '';
   return str1 + str2;
-}
+};
 
 module.exports = eqraCommand;

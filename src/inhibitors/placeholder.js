@@ -5,13 +5,13 @@ class BlacklistInhibitor extends Inhibitor {
     super('blacklist', {
       reason: 'blacklist'
     });
-  }
+  };
 
   exec(message) {
     // He's a meanie!
     const blacklist = ['81440962496172032'];
     return blacklist.includes(message.author.id);
-  }
-}
+  };
+};
 
 module.exports = BlacklistInhibitor;

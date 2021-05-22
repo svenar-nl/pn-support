@@ -6,11 +6,11 @@ class UnhandledRejectionListener extends Listener {
             event: 'exit',
             emitter: 'process',
         });
-    }
+    };
 
     exec(code) {
         code !== 0 ? console.error(`Shutting down with exit code: ${code} at ${time.toUTCString()}`) : console.log(`Shutting down with exit code: ${code} at ${time.toUTCString()}`);
-    }
-}
+    };
+};
 
 module.exports = UnhandledRejectionListener;

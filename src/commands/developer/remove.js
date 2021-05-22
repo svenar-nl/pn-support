@@ -17,7 +17,7 @@ class RemoveCommand extends Command {
       },
       ownerOnly: true
     });
-  }
+  };
   *args() {
     const mtype = yield {
       type: [
@@ -42,7 +42,7 @@ class RemoveCommand extends Command {
       unordered: true
     };
     return { mtype, toRemove };
-  }
+  };
   /**
      * @param {Message} message
      * @param {string} module
@@ -52,7 +52,7 @@ class RemoveCommand extends Command {
     if(mtype === 'inhibitor') this.client.inhibitorHandler.remove(toRemove);
     if(mtype === 'listener') this.client.listenerHandler.remove(toRemove);
     return message.util.reply(`Removed \`${toRemove}\` ${mtype} ✅`);
-  }
-}
+  };
+};
 
 module.exports = RemoveCommand;

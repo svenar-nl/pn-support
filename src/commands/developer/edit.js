@@ -31,7 +31,7 @@ module.exports = class editCommand extends Command {
       ],
       ownerOnly: true
     });
-  }
+  };
 
 
   async exec(msg, { path, link }) {
@@ -59,6 +59,6 @@ module.exports = class editCommand extends Command {
       });
     } catch (err) {
       if(err) return msg.reply(`❌ Could not edit!\`\`\`js\n${err}\`\`\``);
-    }
-  }
+    };
+  };
 };

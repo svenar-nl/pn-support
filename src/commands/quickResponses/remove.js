@@ -22,11 +22,11 @@ module.exports = class rqrCommand extends Command {
         }
       ]
     });
-  }
+  };
 
   async exec(msg, { qr }) {
     const qrs = await this.client.db.get(msg.guild.id, 'qr', []);
     await this.client.db.set(msg.guild.id, 'qr', qrs.filter(q => q.name !== qr.name));
     return msg.reply('✅ Quick-response removed.');
-  }
+  };
 };

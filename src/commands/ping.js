@@ -8,7 +8,7 @@ class PingCommand extends Command {
       aliases: ['ping', 'latency', 'uptime', 'ut'],
       cooldown: 3e3
     });
-  }
+  };
 
   async exec(msg) {
     const sent = await msg.util.reply('📶 Pinging...');
@@ -20,7 +20,7 @@ class PingCommand extends Command {
       `💓 **API Latency**: ${Math.round(this.client.ws.ping)} ms`,
       `🕑 **Uptime**: ${uptime}`
     ]);
-  }
-}
+  };
+};
 
 module.exports = PingCommand;

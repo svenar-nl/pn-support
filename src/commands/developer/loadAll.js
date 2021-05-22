@@ -17,7 +17,7 @@ class LoadCommand extends Command {
       },
       ownerOnly: true
     });
-  }
+  };
   *args() {
     const mtype = yield {
       type: [
@@ -34,7 +34,7 @@ class LoadCommand extends Command {
       unordered: true
     };
     return { mtype };
-  }
+  };
   /**
      * @param {Message} message
      * @param {string} module
@@ -53,7 +53,7 @@ class LoadCommand extends Command {
       this.client.listenerHandler.loadAll();
     }
     return message.util.reply(`Loaded \`all\` ${mtype}s ✅`);
-  }
-}
+  };
+};
 
 module.exports = LoadCommand;
