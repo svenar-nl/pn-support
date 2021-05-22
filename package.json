@@ -1,24 +1,24 @@
 {
-  "name": "ps-support",
+  "name": "pn-support",
   "version": "2.0.0",
-  "description": "A support bot for Promise Solutions",
+  "description": "A support bot for PowerNetwork",
   "main": "./src/index.js",
   "scripts": {
     "start": "node -r dotenv/config ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ta1al/ps-support.git"
+    "url": "git+https://github.com/itzJOHv/support-bot.git"
   },
   "keywords": [
     "bot"
   ],
-  "author": "Ta1al",
+  "author": "itzJOHv",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Ta1al/ps-support/issues"
+    "url": "https://github.com/itzJOHv/support-bot/issues"
   },
-  "homepage": "https://github.com/Ta1al/ps-support#readme",
+  "homepage": "https://github.com/itzJOHv/support-bot#readme",
   "dependencies": {
     "common-tags": "^1.8.0",
     "discord-akairo": "^8.1.0",
