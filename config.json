@@ -6,15 +6,15 @@
   "startupPresence": {
     "status": "idle",
     "activity": {
-      "name": "a loading bar",
+      "name": "the loading screen",
       "type": "WATCHING"
     }
   },
   "readyPresence": {
     "status": "online",
     "activity": {
-     "name": "something cool",
-     "type": "WATCHING"   
+     "name": "logic games with svenar",
+     "type": "PLAYING"   
     }
   },
   "bins": [
