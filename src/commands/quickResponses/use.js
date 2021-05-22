@@ -40,7 +40,7 @@ module.exports = class uqrCommand extends Command {
   async exec(msg, args) {
     args = await this.condition(msg, args);
     if(!args.qr) return this.handler.findCommand('lqr').exec(msg);
-    msg.delete();
+    await msg.delete();
     const webhooks = await msg.channel.fetchWebhooks();
     let webhook = webhooks.find(w => w.name === 'Support QR');
     if(!webhook) webhook = await msg.channel.createWebhook('Support QR');
