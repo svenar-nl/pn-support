@@ -30,7 +30,7 @@ module.exports = class info extends Command {
       .setTitle(this.client.user.tag)
       .setFooter(`Reqested by ${msg.author.tag}`)
       .setTimestamp()
-      .setDescription(`${this.client.user.tag} is a bot made for Promise Solutions as a helper bot.`)
+      .setDescription(`${this.client.user.tag} is a bot made for PowerNetwork (Original: Promise Solutions) as a helper bot.`)
       .addFields([
         {
           name: 'Env',
@@ -52,7 +52,7 @@ module.exports = class info extends Command {
           inline: true
         },
         {
-          name: 'Author',
+          name: 'Original Author',
           value: [
             '<@462870395314241537>'
           ],
