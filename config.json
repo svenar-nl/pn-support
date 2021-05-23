@@ -2,7 +2,7 @@
   "owner": "419892040726347776",
   "guild": "710833982413209620",
   "color": "5539cc",
-  "prefix": "?", "ticketPrefix": "+", "quickResponsePrefix": ".",
+  "prefix": "?", "ticketPrefix": "-", "quickResponsePrefix": ".",
   "startupPresence": {
     "status": "idle",
     "activity": {
