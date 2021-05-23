@@ -78,15 +78,12 @@ module.exports = class createTicketCommand extends Command {
       .setFooter(member.id)
       .setTimestamp();
     const tMsg = await chnl.send(`Ticket for ${member.user} created by ${msg.author}`, embed);
-    await member.user.send(`Please send me an invite to your server for your ticket (${chnl})`)
-      .catch(() => chnl.send('🆘 Please open your DMs and send me an invite to your server.'));
     tMsg.pin();
     const newTicket = {
       id: member.id,
       cMsg: m.id,
       tMsg: tMsg.id,
       reason,
-      invite: null,
       guild: msg.guild.id,
       channel: chnl.id,
       createdBy: msg.author.id,
