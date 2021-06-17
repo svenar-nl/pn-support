@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/itzJOHv/support-bot.git"
+    "url": "git+https://github.com/itzJOHv/pn-support.git"
   },
   "keywords": [
     "bot"
@@ -16,9 +16,9 @@
   "author": "itzJOHv",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/itzJOHv/support-bot/issues"
+    "url": "https://github.com/itzJOHv/pn-support/issues"
   },
-  "homepage": "https://github.com/itzJOHv/support-bot#readme",
+  "homepage": "https://github.com/itzJOHv/pn-support#readme",
   "dependencies": {
     "common-tags": "^1.8.0",
     "discord-akairo": "^8.1.0",
