@@ -20,7 +20,7 @@ class StatsCommand extends Command {
   };
 };
 
-const cpu = () => {
+function cpu() {
     // Take the first CPU, considering every CPUs have the same specs
     // and every NodeJS process only uses one at a time.
     let cpus = os.cpus(),
@@ -40,13 +40,13 @@ const cpu = () => {
     return `\`${perc}%\``;
 };
 
-const ram = () => {
+function ram() {
     let list = [];
 
     Object.entries(process.memoryUsage())
         .forEach(item => list.push(`${item[0]}: ${(item[1] / 1024 / 1024).toFixed(4)} MB`));
     
-    return list.join('\n');
+    return `\`\`\`${list.join('\n')}\`\`\``;
 };
 
 module.exports = StatsCommand;
