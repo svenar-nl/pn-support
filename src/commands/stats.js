@@ -36,8 +36,13 @@ function cpu() {
 
     // Find out the percentage used for this specific CPU
     const perc = currentCPUUsage / total * 100;
+    let bar = "";
 
-    return `\`${perc}%\``;
+    for (var i = 0; i < 100; i+= 10) {
+        bar += i < perc ? "▓" : "░";
+    }
+
+    return `\n\`${perc}% [${bar}]\``;
 };
 
 function ram() {
