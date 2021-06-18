@@ -22,7 +22,7 @@ class StatsCommand extends Command {
 
 function cpu() {
     // Take the first CPU, considering every CPUs have the same specs
-    // and every NodeJS process only uses one at a time.
+    // and every NodeJS process only uses one at a time. 
     let cpus = os.cpus(),
         cpu0 = cpus[0];
 
