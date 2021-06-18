@@ -14,8 +14,8 @@ class StatsCommand extends Command {
   async exec(msg) {
     const sent = await msg.util.reply('📶 Getting info...');
     return sent.edit([
-      `📈 **CPU Usage**: ${cpu}`,
-      `📊 **RAM Usage**: ${ram}`
+      `📈 **CPU Usage**: ${cpu()}`,
+      `📊 **RAM Usage**: ${ram()}`
     ]);
   };
 };
